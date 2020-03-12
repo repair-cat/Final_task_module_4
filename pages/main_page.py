@@ -1,7 +1,6 @@
 """реализуем Page Object, который будет связан с главной страницей интернет-магазина."""
 
 from .base_page import BasePage
-from selenium.webdriver.common.by import By
 from .locators import MainPageLocators
 
 class MainPage(BasePage): 

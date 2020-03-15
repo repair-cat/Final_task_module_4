@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+    pass
 
 
 class LoginPageLocators():
@@ -17,4 +17,9 @@ class ProductPageLocators():
     MINI_BASKET = (By.XPATH, '//strong[contains(text(), "£")]')             # "Стоимость корзины составляет"
     PRODUCT_PRICE = (By.XPATH, '//p[@class="price_color"]')                 # Цена товара
     PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main h1')                    # имя продукта
-    PRODUCT_ADD_MESSAGE = (By.XPATH, '//div[@id="messages"]//strong[1]')    # имя товара в соообщении и добавлении его в корзину
+    PRODUCT_ADD_MESSAGE = (By.XPATH, '//div[@id="messages"]//strong[1]')    # имя товара в соообщении о добавлении его в корзину
+
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    

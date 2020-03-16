@@ -22,4 +22,9 @@ class ProductPageLocators():
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    
+
+
+class BasketPageLocators():
+    LOOK_BASKET = (By.XPATH, '//span[@class="btn-group"]')          # ссылка "Посмотреть корзину"
+    BASKET_HAVE_PRODUCT = (By.CSS_SELECTOR, '.col-sm-6.h3')                         # есть товары в корзине
+    BASKET_IS_EMPTY = (By.XPATH, '//p[contains(text(), "Your basket is empty")]')     # заголовок - Ваша корзина пуста

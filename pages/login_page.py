@@ -1,8 +1,22 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
+import time
 
 
 class LoginPage(BasePage):
+    def register_new_user(self, email, password):
+        # регистрируем нового пользователя
+        email_form = self.browser.find_element(*LoginPageLocators.EMAIL)     # найти поле ввода емайл
+        email_form.send_keys(email)                                          # отправляем емайл в поле емайл
+        pass_1 = self.browser.find_element(*LoginPageLocators.PASS_1)        # найти поле ввода пароля
+        pass_1.send_keys(password)
+        pass_2 = self.browser.find_element(*LoginPageLocators.PASS_2)        # найти поле повторного ввода пароля
+        pass_2.send_keys(password)
+        reg_button = self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON)
+        reg_button.click()
+        assert self.is_element_present(*LoginPageLocators.USER_IS_REGISTERED)  # сообщение о том, что юзер зареган
+
+
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_login_form()

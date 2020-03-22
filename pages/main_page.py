@@ -1,7 +1,7 @@
 """реализуем Page Object, который будет связан с главной страницей интернет-магазина."""
 
 from .base_page import BasePage
-from .locators import MainPageLocators
+
 
 class MainPage(BasePage): 
     def __init__(self, *args, **kwargs):
